@@ -1,0 +1,34 @@
+starting selenium hub with configuration:
+{
+  "host": null,
+  "port": 4444,
+  "role": "hub",
+  "maxSession": 5,
+  "newSessionWaitTimeout": -1,
+  "capabilityMatcher": "org.openqa.grid.internal.utils.DefaultCapabilityMatcher",
+  "throwOnCapabilityNotPresent": true,
+  "jettyMaxThreads": -1,
+  "cleanUpCycle": 5000,
+  "browserTimeout": 0,
+  "timeout": 30,
+  "debug": false
+}
+shutting down hub..
+shutdown complete
+starting selenium hub with configuration:
+{
+  "host": null,
+  "port": 4444,
+  "role": "hub",
+  "maxSession": 5,
+  "newSessionWaitTimeout": -1,
+  "capabilityMatcher": "org.openqa.grid.internal.utils.DefaultCapabilityMatcher",
+  "throwOnCapabilityNotPresent": true,
+  "jettyMaxThreads": -1,
+  "cleanUpCycle": 5000,
+  "browserTimeout": 0,
+  "timeout": 30,
+  "debug": false
+}
+shutting down hub..
+shutdown complete

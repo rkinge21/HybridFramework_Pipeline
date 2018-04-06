@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" [<!ENTITY parent SYSTEM "resources/Environment_Config.xml">]>
+
+<suite name="NewTours" parallel="none" verbose="2">
+	<parameters>&parent;</parameters>
+	<test name="New Tours Test Execution">
+		<classes>
+			<class name="com.testmadness.testcase.BookFlightTest" />
+		</classes>
+	</test>
+</suite>
+
+
+<!-- 
+parallel = "methods" : TestNG will run all the 	methods in separate threads. 
+parallel = "classes" : TestNG will run all the 	methods in the same class in the same thread. 
+parallel = "tests"   : TestNG will run all the methods in the same <test> tag in the same thread. -->
+
+
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" [
+    <!ENTITY parent SYSTEM "src/test/resources/<project_name>/common/parameters.xml">
+    <!ENTITY host SYSTEM "src/test/resources/<project_name>/common/hostParameters.xml">
+    <!ENTITY agent SYSTEM "src/test/resources/<project_name>/common/agentParameters.xml">
+    ] >
+
+<suite name="MyTestSuite" parallel="false" verbose="2">
+    Reference to common parameters
+	<parameters>&parent;</parameters>
+	<parameters>&host;</parameters>
+	<parameters>&agent;</parameters>
+    <test name="MyTest">
+        <classes>
+            <class name="Sharing_Data_Across_Suites.ReadParameters" />
+        </classes>
+    </test> 
+</suite>  -->

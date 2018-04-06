@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="suite of suites">
+    <suite-files>
+        <suite-file path="resources/execution/ExecutionSuiteFiles/testng_surefire_1.xml" />
+        <suite-file path="resources/execution/ExecutionSuiteFiles/testng_surefire_2.xml" />
+		<suite-file path="resources/execution/ExecutionSuiteFiles/testng_surefire_3.xml" />
+		<suite-file path="resources/execution/ExecutionSuiteFiles/testng_surefire_4.xml" />
+		<suite-file path="resources/execution/ExecutionSuiteFiles/testng_surefire_5.xml" />
+		<suite-file path="resources/execution/ExecutionSuiteFiles/testng_surefire_6.xml" />
+    </suite-files>
+</suite>

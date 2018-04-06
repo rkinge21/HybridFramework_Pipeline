@@ -1,0 +1,1 @@
+docker-compose up -d --scale chromenode=%1 --scale firefoxnode=%2

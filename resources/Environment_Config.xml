@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<parameter name="HostName" value="ilbq7890.eaas.amadocs.com"></parameter>
+<parameter name="Port" value="28501"></parameter>
+<parameter name="ExtraParam" value="ExtraParam Value"></parameter>

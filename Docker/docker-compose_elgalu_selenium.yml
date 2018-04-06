@@ -1,0 +1,48 @@
+version: '2.1'
+
+services:
+  hub:
+    image: elgalu/selenium
+    network_mode: host
+    volumes:
+      - /dev/shm:/dev/shm
+    privileged: true
+    environment:
+      - SELENIUM_HUB_PORT=${SELENIUM_HUB_PORT-4444}
+      - PICK_ALL_RANDOM_PORTS=true
+      - GRID=true
+      - CHROME=false
+      - FIREFOX=false
+
+  chrome:
+    image: elgalu/selenium
+    network_mode: host
+    volumes:
+      - /dev/shm:/dev/shm
+    privileged: true
+    environment:
+      - SELENIUM_HUB_PORT=${SELENIUM_HUB_PORT-4444}
+      - PICK_ALL_RANDOM_PORTS=true
+      - GRID=false
+      - CHROME=true
+      - FIREFOX=false
+
+  firefox:
+    image: elgalu/selenium
+    network_mode: host
+    volumes:
+      - /dev/shm:/dev/shm
+    privileged: true
+    environment:
+      - SELENIUM_HUB_PORT=${SELENIUM_HUB_PORT-4444}
+      - PICK_ALL_RANDOM_PORTS=true
+      - GRID=false
+      - CHROME=false
+      - FIREFOX=true
+
+  mock:
+    image: elgalu/google_adwords_mock
+    network_mode: host
+    tty: true
+    environment:
+      - MOCK_SERVER_PORT=8280
