@@ -29,14 +29,14 @@ http://www.mkyong.com/maven/maven-create-a-fat-jar-file-one-jar-example/
 
 mvn clean package -Dremotewebdriver="ilde17085.eaas.amdocs.com:4448"
 
+mvn clean package -DthreadPoolSize="3" -Dremotewebdriver="0.0.0.0:4448"
+
 java -jar HybridFramework-0.0.1-SNAPSHOT-jar-with-dependencies.jar ilde17085.eaas.amdocs.com:4448
 
 https://docs.docker.com/engine/reference/builder/#arg
 
 docker build -t mydocker_1 --build-arg HostDetails=ilde17085.eaas.amdocs.com:4448 .
 docker run  mydocker_1 ilde17085.eaas.amdocs.com:4448
-
-
 
 
 docker stop $(docker ps -aq); docker rm $(docker ps -aq)
@@ -48,7 +48,6 @@ docker kill -f $(docker ps -aq) ;  docker rm -f $(docker ps -aq)
 docker images
 docker rmi -f b00ea124ed62 529165268aa2 0c45f7936948 
 docker images
-
 
 
 docker run -d -p 4448:4444 --name selenium-hub selenium/hub:3.11.0-californium

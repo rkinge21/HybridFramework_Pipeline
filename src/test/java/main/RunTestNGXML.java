@@ -20,46 +20,64 @@ import java.util.Map;
 
 public class RunTestNGXML 
 {
-	static String tesNGFileName = System.getProperty("user.dir")+"/resources/execution/testng_master_surefire.xml";
+	static String tesNGFileName = System.getProperty("user.dir")+"/resources/execution/testng_master_surefire_1.xml";
 	public static void main(String[] args) 
 	{
-		TestNG testng = new TestNG();
-        TestListenerAdapter adapter = new TestListenerAdapter();
-        List<String> suites = new ArrayList<String>();
-        testng.addListener(adapter);
-        //System.out.println("Remote webdriver Machine Details, Hostname:port = "+args[0]);
-        //Utility.writePropertiesFile(Constants.PROP_LOCATION+"/system.properties", "remotewebdriver", args[0]);
-        
-        Utility.writePropertiesFile(Constants.PROP_LOCATION+"/system.properties", "remotewebdriver", "localhost:4448");
-        
-        suites.add(tesNGFileName);
-        System.out.println("Executing TestNG Suite File = "+tesNGFileName);
-        testng.setTestSuites(suites);
-        testng.setParallel("parallel");
-        testng.setSuiteThreadPoolSize(5);
-        testng.setOutputDirectory(System.getProperty("user.dir")+"/test-output/ParallelExec_Report");
-        testng.run();
-		
-		
-		
+		try 
+		{
+			if (args.length==0) 
+			{
+				System.err.println(".... Remote webdriver Machine Details is mising .... ");
+				System.out.println("Remote webdriver Machine Details should be like \n java -jar HybridFramework.jar ilde17085.eaas.amdocs.com:4448\n");
+				System.exit(0);
+			} 
+			else 
+			{
+				TestNG testng = new TestNG();
+				TestListenerAdapter adapter = new TestListenerAdapter();
+				List<String> suites = new ArrayList<String>();
+				testng.addListener(adapter);
+				System.out.println("Remote webdriver Machine Details, Hostname:port = "+args[0]);
+				Utility.writePropertiesFile(Constants.PROP_LOCATION+"/system.properties", "remotewebdriver", args[0]);
+				
+				//Utility.writePropertiesFile(Constants.PROP_LOCATION+"/system.properties", "remotewebdriver", "localhost:4448");
+				
+				suites.add(tesNGFileName);
+				System.out.println("Executing TestNG Suite File = "+tesNGFileName);
+				testng.setTestSuites(suites);
+				testng.setParallel("parallel");
+				testng.setSuiteThreadPoolSize(5);
+				testng.setOutputDirectory(System.getProperty("user.dir")+"/test-output/ParallelExec_Report");
+				testng.run();
+				//System.exit(0);
+			}
+			
+			
+			
 /*		TestNG testng = new TestNG();
-		List<String> suites = Lists.newArrayList();
-		System.out.println("Executing TestNG Suite File = "+args[0]);
-		suites.add(args[0]);
-		testng.setTestSuites(suites);
-		testng.run();*/
-		
-		
-		
+			List<String> suites = Lists.newArrayList();
+			System.out.println("Executing TestNG Suite File = "+args[0]);
+			suites.add(args[0]);
+			testng.setTestSuites(suites);
+			testng.run();*/
+			
+			
+			
 /*		TestNG testng = new TestNG();
-		List<String> suites = Lists.newArrayList();
-		//CreateTestNGXML("ilbq7890.eaas.amdocs.com", "28501", "Extra Param Value");
-		CreateTestNGXML(args[0], args[1], args[2]);
-		String testNGFile = System.getProperty("user.dir") + "\\"+tesNGFileName;		
-		System.out.println("Executing TestNG Suite File = "+testNGFile);
-		suites.add(testNGFile);
-		testng.setTestSuites(suites);
-		testng.run();*/
+			List<String> suites = Lists.newArrayList();
+			//CreateTestNGXML("ilbq7890.eaas.amdocs.com", "28501", "Extra Param Value");
+			CreateTestNGXML(args[0], args[1], args[2]);
+			String testNGFile = System.getProperty("user.dir") + "\\"+tesNGFileName;		
+			System.out.println("Executing TestNG Suite File = "+testNGFile);
+			suites.add(testNGFile);
+			testng.setTestSuites(suites);
+			testng.run();*/
+		} catch (Exception e) 
+		{
+			e.printStackTrace();
+			System.out.println("\n -----------  Exception occurred in main class -----------\n");
+			System.out.println(e.getMessage());
+		}
 	}
 
 	public static void CreateTestNGXML(String HostName,String Port, String ExtraParam)
