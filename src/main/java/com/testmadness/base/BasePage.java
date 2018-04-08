@@ -98,10 +98,10 @@ public class BasePage
 				DesiredCapabilities capability = DesiredCapabilities.chrome();
 				capability.setPlatform(Platform.LINUX);
 				
-				Proxy proxy = new Proxy();
+/*				Proxy proxy = new Proxy();
 				proxy.setHttpProxy("genproxy:8080");
 				capability.setBrowserName("chrome");
-				capability.setCapability(CapabilityType.PROXY,proxy);
+				capability.setCapability(CapabilityType.PROXY,proxy);*/
 				
 				System.out.println("RemoteWebDriver URL : " + "http://"+Config.getProp().getProperty("remotewebdriver")+"/wd/hub");
 				driver = new RemoteWebDriver(new URL("http://"+Config.getProp().getProperty("remotewebdriver")+"/wd/hub"), capability);

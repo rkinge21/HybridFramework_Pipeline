@@ -6,7 +6,7 @@
   <parameter name="HostName" value="ilbq7890.eaas.amdocs.com"/>
   <test name="New Tours Test Execution">
     <classes>
-      <class name="com.testmadness.testcase.BookFlightTest2"/>
+      <class name="com.testmadness.testcase.BookFlightTest"/>
     </classes>
   </test> <!-- New Tours Test Execution -->
 </suite> <!-- NewTours -->

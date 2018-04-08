@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="NewTours" parallel="none" verbose="2">
+
+	<parameter name="HostName" value="ilbq7890.eaas.amdocs.com"></parameter>
+	<parameter name="Port" value="28501"></parameter>
+	<parameter name="ExtraParam" value="Extra Param Value"></parameter>
+	<test name="New Tours Test Execution">
+		<classes>
+			<class name="com.testmadness.testcase.BookFlightTest" />
+		</classes>
+	</test>
+</suite>

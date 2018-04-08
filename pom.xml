@@ -21,16 +21,14 @@
 		<webdriver.safari.driver>${basedir}/resources/drivers/safari/</webdriver.safari.driver>
 		<webdriver.firefox.driver>${basedir}/resources/drivers/firefox/geckodriver.exe</webdriver.firefox.driver>
 		<webdriver.chrome.driver>${basedir}/resources/drivers/chrome/chromedriver.exe</webdriver.chrome.driver>
-		<!-- <remotewebdriver.hostname.port>localhost:4448</remotewebdriver.hostname.port> -->
 		<remotewebdriver>ilde16570.eaas.amdocs.com:4448</remotewebdriver>
 		<logfoldername>logfoldername</logfoldername>
 		<logfilename>logfilename</logfilename>
 	</properties>
 
 	<build>
-		<!-- <sourceDirectory>src</sourceDirectory> -->
 
-		<!-- <sourceDirectory>src</sourceDirectory> -->
+		<sourceDirectory>src</sourceDirectory>   <!-- Do not comment, Very important when running from java -jar  -->
 		<resources>
 			<resource>
 				<directory>${basedir}</directory>
@@ -58,7 +56,7 @@
 						</goals>
 						<configuration>
 							<outputFile>
-								src/main/resources/system.properties
+								resources/system.properties
 							</outputFile>
 						</configuration>
 					</execution>
@@ -111,7 +109,7 @@
 			</plugin>
 
 
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.19.1</version>
@@ -124,7 +122,7 @@
 						<suiteXmlFile>${basedir}/resources/execution/testng_master_surefire.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
-			</plugin>
+			</plugin> -->
 		</plugins>
 	</build>
 

@@ -5,6 +5,7 @@ import java.util.Date;
 
 public class Constants 
 {
+	public static final String LOG4J_XML_PATH = System.getProperty("user.dir") + "/src/main/java/com/testmadness/utils/log4j.xml";
 	// TestResults folder location
 	public static final String PATH_RESULTS = System.getProperty("user.dir") + "/TestResults/";
 
@@ -21,7 +22,7 @@ public class Constants
 	public static final String PROP_NAME = "system.properties";
 
 	// Property file location
-	public static final String PROP_LOCATION = "src/main/resources";
+	public static final String PROP_LOCATION = "resources";
 
 	public static Date date = new Date();
 	public static SimpleDateFormat reportDate = new SimpleDateFormat("MM-dd-yyyy hh-mm-ss");

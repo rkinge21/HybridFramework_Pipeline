@@ -23,13 +23,15 @@ public class RunTestNGXML
 	static String tesNGFileName = System.getProperty("user.dir")+"/resources/execution/testng_master_surefire.xml";
 	public static void main(String[] args) 
 	{
-		
 		TestNG testng = new TestNG();
         TestListenerAdapter adapter = new TestListenerAdapter();
         List<String> suites = new ArrayList<String>();
-        System.out.println("Remote webdriver Machine Details, Hostname:port = "+args[0]);
         testng.addListener(adapter);
-        Utility.writePropertiesFile(Constants.PROP_LOCATION+"/system.properties", "remotewebdriver", args[0]);
+        //System.out.println("Remote webdriver Machine Details, Hostname:port = "+args[0]);
+        //Utility.writePropertiesFile(Constants.PROP_LOCATION+"/system.properties", "remotewebdriver", args[0]);
+        
+        Utility.writePropertiesFile(Constants.PROP_LOCATION+"/system.properties", "remotewebdriver", "localhost:4448");
+        
         suites.add(tesNGFileName);
         System.out.println("Executing TestNG Suite File = "+tesNGFileName);
         testng.setTestSuites(suites);
@@ -37,6 +39,7 @@ public class RunTestNGXML
         testng.setSuiteThreadPoolSize(5);
         testng.setOutputDirectory(System.getProperty("user.dir")+"/test-output/ParallelExec_Report");
         testng.run();
+		
 		
 		
 /*		TestNG testng = new TestNG();

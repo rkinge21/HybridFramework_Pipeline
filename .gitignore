@@ -1,0 +1,6 @@
+target/
+RESULT_LOG/
+Screenshots/
+test-output/
+src/main/resources/system.properties
+

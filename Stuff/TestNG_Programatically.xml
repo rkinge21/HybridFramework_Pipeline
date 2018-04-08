@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="10" name="Regerssion" parallel="Tests">
+  <parameter name="ExtraParam" value="Extra Param Value"/>
+  <parameter name="Port" value="28501"/>
+  <parameter name="Hostname" value="ilbq7890.eaas.amdocs.com"/>
+  <test name="Test">
+    <classes>
+      <class name="ClassName1"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Regerssion -->

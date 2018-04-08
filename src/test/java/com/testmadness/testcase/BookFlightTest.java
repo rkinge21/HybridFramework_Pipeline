@@ -100,7 +100,8 @@ public class BookFlightTest
 	{
 		System.setProperty(Config.getProp().getProperty("logfoldername"), Constants.logFolderName);
 		System.setProperty(Config.getProp().getProperty("logfilename"), Constants.logFileName);
-		DOMConfigurator.configure("src/main/java/com/testmadness/utils/log4j.xml");
+		//DOMConfigurator.configure("src/main/java/com/testmadness/utils/log4j.xml");
+		DOMConfigurator.configure(Constants.LOG4J_XML_PATH);
 		try 
 		{
 			ExcelUtil.setExcelFile(Constants.PATH_DATA, "Sheet1");
