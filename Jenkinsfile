@@ -7,14 +7,14 @@ pipeline
 		{
 			steps
 			{
-			   	sh '${MAVEN_HOME}/bin/mvn clean compile'
+			   	bat 'mvn clean compile'
 			}
 		}
 		stage('Testing Stage')
 		{
 			steps
 			{
-				sh '${MAVEN_HOME}/bin/mvn test'
+				bat 'mvn test'
 			}
 		}
 		
@@ -22,7 +22,7 @@ pipeline
 		{
 			steps
 			{
-				sh '${MAVEN_HOME}/bin/mvn package'
+				bat 'mvn package'
 			}
 		}
 	}
