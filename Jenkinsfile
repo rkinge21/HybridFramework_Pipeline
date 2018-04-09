@@ -9,7 +9,7 @@ pipeline
 			{
 				withMaven(maven : 'maven3_5_3')
 				{
-					sh 'mvn clean compile'
+					sh 'mvn clean compile -DthreadPoolSize="3" -Dremotewebdriver="0.0.0.0:4448"'
 				}
 			}
 		}
@@ -19,7 +19,7 @@ pipeline
 			{
 				withMaven(maven : 'maven3_5_3')
 				{
-					sh 'mvn test'
+					sh 'mvn test -DthreadPoolSize="3" -Dremotewebdriver="0.0.0.0:4448"'
 				}
 			}
 		}
@@ -30,7 +30,7 @@ pipeline
 			{
 				withMaven(maven : 'maven3_5_3')
 				{
-					sh 'mvn package'
+					sh 'mvn package -DthreadPoolSize="3" -Dremotewebdriver="0.0.0.0:4448"'
 				}
 			}
 		}
