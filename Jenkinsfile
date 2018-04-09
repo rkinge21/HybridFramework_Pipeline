@@ -7,14 +7,20 @@ pipeline
 		{
 			steps
 			{
-			   	sh 'mvn clean compile'
+				withMaven(maven : 'maven3_5_3')
+				{
+					sh 'mvn clean compile'
+				}
 			}
 		}
 		stage('Testing Stage')
 		{
 			steps
 			{
-				sh 'mvn test'
+				withMaven(maven : 'maven3_5_3')
+				{
+					sh 'mvn test'
+				}
 			}
 		}
 		
@@ -22,7 +28,10 @@ pipeline
 		{
 			steps
 			{
-				sh 'mvn package'
+				withMaven(maven : 'maven3_5_3')
+				{
+					sh 'mvn package'
+				}
 			}
 		}
 	}
