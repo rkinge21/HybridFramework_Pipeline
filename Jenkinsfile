@@ -7,20 +7,14 @@ pipeline
 		{
 			steps
 			{
-				withMaven(maven : 'maven3_5_3')
-				{
-					sh 'mvn clean compile -DthreadPoolSize="3" -Dremotewebdriver="0.0.0.0:4448"'
-				}
+			   	sh '${MAVEN_HOME}/bin/mvn clean compile'
 			}
 		}
 		stage('Testing Stage')
 		{
 			steps
 			{
-				withMaven(maven : 'maven3_5_3')
-				{
-					sh 'mvn test -DthreadPoolSize="3" -Dremotewebdriver="0.0.0.0:4448"'
-				}
+				sh '${MAVEN_HOME}/bin/mvn test'
 			}
 		}
 		
@@ -28,10 +22,7 @@ pipeline
 		{
 			steps
 			{
-				withMaven(maven : 'maven3_5_3')
-				{
-					sh 'mvn package -DthreadPoolSize="3" -Dremotewebdriver="0.0.0.0:4448"'
-				}
+				sh '${MAVEN_HOME}/bin/mvn package'
 			}
 		}
 	}
