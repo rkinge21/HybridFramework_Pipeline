@@ -19,7 +19,7 @@ pipeline
 			{
 				withMaven(maven : 'maven3_5_3')
 				{
-				   sh 'mvn test -DthreadPoolSize="3" -Dremotewebdriver="0.0.0.0:4444"'
+				   sh 'mvn test -DthreadPoolSize="3" -Dremotewebdriver="localhost:4448"'
 				}
 			}
 		}
