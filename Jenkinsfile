@@ -19,7 +19,7 @@ pipeline
 			{
 				withMaven(maven : 'maven3_5_3')
 				{
-				   sh 'mvn test -DthreadPoolSize="3" -Dremotewebdriver="ilde16570.eaas.amdocs.com:4448"'
+				   sh 'mvn test -DthreadPoolSize="3" -Dremotewebdriver="eaasrt:4448"'
 				}
 			}
 		}
@@ -30,7 +30,7 @@ pipeline
 			{
 				withMaven(maven : 'maven3_5_3')
 				{
-					sh 'mvn package -DthreadPoolSize="3" -Dremotewebdriver="ilde16570.eaas.amdocs.com:4448"'
+					sh 'mvn package -DthreadPoolSize="3" -Dremotewebdriver="eaasrt:4448"'
 				}
 			}
 		}
